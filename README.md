@@ -28,16 +28,8 @@ You will find:
 - 🌟 Future enhancements
 
 --------------------------------------
-## 🧬 1. EFS Security
 
-- Allow NFS TCP 2049 only for required EC2 instances
-- Enable encryption at rest
-- Use IAM policies for access control
-- Access Points enforce POSIX permissions
-
---------------------------------------
-
-## 🧭 2. ASCII Architecture (Simple View):-
+## 🧭 1. ASCII Architecture (Simple View):-
 ```
          Users
            |
@@ -56,7 +48,7 @@ You will find:
 ```
 --------------------------------------
 
-## 🔧 3. EFS Components Explained:-
+## 🔧 2. EFS Components Explained:-
 
 - 📌 EFS File System
 Auto-scaling, managed NFS storage.
@@ -72,7 +64,7 @@ Allow NFS traffic TCP 2049.
 
 --------------------------------------
 
-## 🛠 4. Step-by-Step: Create an EFS File System (Console):-
+## 🛠 3. Step-by-Step: Create an EFS File System (Console):-
 
 ### Step 1: Go to AWS Console → EFS → Create File System:-
 
@@ -108,7 +100,7 @@ fs-12345678:/ /mnt/efs efs defaults,_netdev 0 0
 ```
 --------------------------------------
 
-## 🖥️ 5. AWS CLI: Create EFS:-
+## 🖥️ 4. AWS CLI: Create EFS:-
 
 - Create file system
 aws efs create-file-system --performance-mode generalPurpose
@@ -121,7 +113,7 @@ aws efs create-mount-target \
 
 --------------------------------------
 
-## 🧾 6. CloudFormation Template (Minimal EFS):-
+## 🧾 5. CloudFormation Template (Minimal EFS):-
 ```yaml
 Resources:
   MyEFS:
@@ -138,7 +130,7 @@ Resources:
 ```
 --------------------------------------
 
-## 🔐 7. Security Best Practices:-
+## 🔐 6. Security Best Practices:-
 
 - ✔ Allow NFS 2049 only
 Inbound → TCP 2049 → EC2 SG
@@ -149,7 +141,7 @@ Inbound → TCP 2049 → EC2 SG
 - ✔ Use IAM + EFS policies for least privilege
 --------------------------------------
 
-## ⚙️ 8. Performance Optimization:-
+## ⚙️ 7. Performance Optimization:-
 
 - Use General Purpose mode for web apps
 - Use Max I/O for 1,000+ EC2 fleet
@@ -158,7 +150,7 @@ Inbound → TCP 2049 → EC2 SG
 - Avoid small-file-heavy workloads (EFS is optimized for large distributed workloads)
 
 --------------------------------------
-## 🧪 9. Testing EFS Across EC2 Instances:-
+## 🧪 8. Testing EFS Across EC2 Instances:-
 
 Create a file from EC2-A:
 ```
@@ -172,7 +164,7 @@ cat /mnt/efs/test.txt
 🟢 If you see the same content → EFS is working across instances.
 
 --------------------------------------
-## 🛠 10. Troubleshooting:-
+## 🛠 9. Troubleshooting:-
 
 ❌ Cannot mount EFS
 
@@ -192,7 +184,7 @@ cat /mnt/efs/test.txt
 - ✔ Remove unnecessary metadata operations
 
 --------------------------------------
-## 📁 11. Useful Commands Summary:-
+## 📁 10. Useful Commands Summary:-
 ```
 df -h                      # verify EFS mount
 ```
@@ -209,7 +201,7 @@ aws efs describe-file-systems
 aws efs describe-mount-targets
 ```
 --------------------------------------
-## 🌟 12. Future Enhancements (Recommended):-
+## 🌟 11. Future Enhancements (Recommended):-
 
 - Add EFS + ECS example
 - Add EFS + EKS dynamic provisioning
@@ -219,7 +211,7 @@ aws efs describe-mount-targets
 - Add CloudWatch log-based monitoring
 
 --------------------------------------
-## ✍️ 13. Author:-
+## ✍️ 12. Author:-
 
 - 👤 Prasad
 - 💼 Cloud • DevOps • AWS • Infra Automation
